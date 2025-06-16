@@ -1,0 +1,26 @@
+{% include "header.html" %}
+{% block content %}
+
+<center>
+    {% for item in items %}
+
+    <h1>{{item.name }}<br></h1>
+
+
+    {% if item.status == 1 %}
+    {% for childitem in childitems %}
+    {% if childitem.parentcell == forloop.counter0 %}
+    <h6>{{ childitem.parentcell }}</h6>
+    {% endif %}
+    {% endfor %}
+
+    <br>
+    {% endif %}
+
+    {% endfor %}
+
+
+</center>
+
+{% endblock %}
+{% include "footer.html" %}
